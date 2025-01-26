@@ -3,6 +3,8 @@
 let nomeDosAmigos = [];
 const input = document.querySelector('input');
 const lista = document.getElementById('listaAmigos');                   // Captura a lista (<ul>)
+const amigoSorteadoElement = document.getElementById('resultado');      // Exibe o amigo sorteado
+
 
 /* Função para adicionar amigos à lista */
 function adicionarAmigo() {
@@ -27,7 +29,7 @@ function adicionarAmigo() {
 function atualizarLista() {
     
     lista.innerHTML = "";                               // Limpa a lista atual no DOM
-    
+    amigoSorteadoElement.innerHTML = "";                // Limpa mensagem de nenhum amigo cadastrado
 
     /* Percorre o array `nomeDosAmigos` com um loop for */
     for (let i = 0; i < nomeDosAmigos.length; i++) {
@@ -38,4 +40,23 @@ function atualizarLista() {
 
         lista.appendChild(itemLista);                   // Adiciona o <li> à lista
     }
+}
+
+
+/* Função para sortear um amigo */
+function sortearAmigo() {
+
+    if (nomeDosAmigos.length === 0) {
+        amigoSorteadoElement.textContent = "Nenhum amigo cadastrado ainda.";
+        alert("Por favor, adicione amigos antes de sortear.");
+        return;
+    }
+
+    lista.innerHTML = "";
+
+    // Sorteia um número aleatório entre 0 e o tamanho do array
+    const indexSorteado = Math.floor(Math.random() * nomeDosAmigos.length);
+
+    // Exibe o nome sorteado
+    amigoSorteadoElement.textContent = `O amigo sorteado é: ${nomeDosAmigos[indexSorteado]}`;
 }
