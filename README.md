@@ -1,4 +1,4 @@
-Sorteador de Amigos
+<h1 align="center"> Sorteador de Amigos</h1>
 
 Este repositório contém um código JavaScript que implementa um sistema para gerenciar uma lista de amigos e realizar um sorteio aleatório entre eles. Ele permite adicionar amigos a uma lista, exibir a lista de amigos cadastrados e sortear um nome aleatoriamente.
 
